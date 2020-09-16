@@ -7,14 +7,6 @@ pipeline {
       }
     }
 
-    stage('outfile') {
-      steps {
-        sh 'echo "helloworld" >> blueocean'
-      }
-    }
-
   }
-  triggers {
-    cron('H/15 * * * *')
-  }
+  
 }
