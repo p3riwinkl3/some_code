@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  triggers {
-   cron('H/15 * * * *')
-  }
   stages {
     stage('echo') {
       steps {
@@ -10,5 +7,14 @@ pipeline {
       }
     }
 
+    stage('outfile') {
+      steps {
+        sh 'echo "helloworld" >> blueocean'
+      }
+    }
+
+  }
+  triggers {
+    cron('H/15 * * * *')
   }
 }
